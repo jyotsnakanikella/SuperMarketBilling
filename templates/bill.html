@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Bill Summary</title>
+{% endblock %}
+
+{% block body %}
+    <!-- BillList=amounts[4:] -->
+    <h2>{{amounts[0]}}</h2>
+    <h3>{{"Item"}}&nbsp;{{"Qty"}}&nbsp;&nbsp;{{"Amount"}}</h3>
+    {% for item in amounts[4:] %}
+        <p>{{item.item}}&nbsp;{{item.quantity}}&nbsp;{{item.unit}}&nbsp;{{item.billed_amount}}</p>
+    {% endfor %}
+    <p>{{"Total Amount: "}} {{amounts[1]}}Rs</p>
+    <p>{{"You saved: "}}{{amounts[2]}}{{"-"}}{{amounts[1]}}{{"="}}{{amounts[3]}}</p>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
